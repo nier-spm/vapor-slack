@@ -1,7 +1,8 @@
+Packages
+.build
 .DS_Store
-/.build
-/Packages
-/*.xcodeproj
-xcuserdata/
+*.xcodeproj
 DerivedData/
-.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+Package.resolved
+.swiftpm
+Tests/LinuxMain.swift

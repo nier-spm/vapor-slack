@@ -1,5 +1,5 @@
     import XCTest
-    @testable import vapor_slack
+    @testable import VaporSlack
 
     final class VaporSlackTests: XCTestCase {
         func testExample() {

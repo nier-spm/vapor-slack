@@ -13,7 +13,7 @@ A Vapor extension package for [Slack Messaging Api](https://api.slack.com/messag
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/nier-spm/vapor-slack.git", from: "0.0.1")
+    .package(url: "https://github.com/nier-spm/vapor-slack.git", from: "0.0.2")
 ],
 ```
 
@@ -25,7 +25,7 @@ targets: [
     .target(
         name: "App",
         dependencies: [
-            .product(name: "VaporSlack", package: "VaporSlack"),
+            .product(name: "VaporSlack", package: "vapor-slack"),
             ...
         ],
     }

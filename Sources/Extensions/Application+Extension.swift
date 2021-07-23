@@ -4,6 +4,9 @@ extension Application {
     
     private static var _slack: SlackConfigutaion?
     
+    /**
+     Configuration of Slack.
+     */
     public var slack: SlackConfigutaion {
         get {
             return Application._slack ?? SlackConfigutaion()

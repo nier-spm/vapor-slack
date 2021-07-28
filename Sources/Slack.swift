@@ -41,7 +41,7 @@ extension Slack {
             
             try request.content.encode(payload)
         }.flatMapThrowing { response in
-            print("[ Slack.response ] \(response.status)")
+            print("[ Slack.response ] \(response.status.code) \(response.status)")
             
             if let body = response.body {
                 let res = Data(body.readableBytesView)

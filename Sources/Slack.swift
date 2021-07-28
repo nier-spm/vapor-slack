@@ -35,17 +35,18 @@ extension Slack {
         let headers: HTTPHeaders = self.request.application.slack.header
         
         return self.request.client.post(URI(string: api), headers: headers) { request in
-            if self.request.application.environment != .production {
-                let body = try JSONEncoder().encode(payload)
-                print("[ Slack ] \(String(decoding: body, as: UTF8.self))")
-            }
+            let body = try JSONEncoder().encode(payload)
+            
+            print("[ Slack.payload ] \(String(decoding: body, as: UTF8.self))")
             
             try request.content.encode(payload)
         }.flatMapThrowing { response in
-            if self.request.application.environment != .production, let body = response.body {
+            print("[ Slack.response ] \(response.status)")
+            
+            if let body = response.body {
                 let res = Data(body.readableBytesView)
                 
-                print("[ Slack ] \(String(decoding: res, as: UTF8.self))")
+                print("[ Slack.response ] \(String(decoding: res, as: UTF8.self))")
             }
             
             return response
